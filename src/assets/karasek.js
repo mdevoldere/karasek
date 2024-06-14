@@ -4,3 +4,5 @@ class KarasekQuestion
         Object.assign(this, question);
     }
 }
+
+export { KarasekQuestion }

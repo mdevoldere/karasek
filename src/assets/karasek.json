@@ -1,6 +1,130 @@
 [
     {
         "id": 1,
-        "question": ""
+        "question": "Dans mon travail, je dois apprendre des choses nouvelles"
+    },
+    {
+        "id": 2,
+        "question": "Dans mon travail, j'effectue des tâches répétitives"
+    },
+    {
+        "id": 3,
+        "question": "Mon travail me demande d'être créatif"
+    },
+    {
+        "id": 4,
+        "question": "Mon travail me permet souvent de prendre des décisions moi-même"
+    },
+    {
+        "id": 5,
+        "question": "Mon travail me demande un haut niveau de compétence"
+    },
+    {
+        "id": 6,
+        "question": "Dans ma tâche, j'ai très peu de liberté pour décider comment je fais mon travail"
+    },
+    {
+        "id": 7,
+        "question": "Dans mon travail, j'ai des activités variées"
+    },
+    {
+        "id": 8,
+        "question": "J'ai la possibilité d'influencer le déroulement de mon travail"
+    },
+    {
+        "id": 9,
+        "question": "J'ai l'occasion de développer mes compétences profesionnelles"
+    },
+    {
+        "id": 10,
+        "question": "Mon travail me demande de travail très vite"
+    },
+    {
+        "id": 11,
+        "question": "Mon travail me demande de travailler intensément"
+    },
+    {
+        "id": 12,
+        "question": "On me demande d'effectuer une quantité de travail excessive"
+    },
+    {
+        "id": 13,
+        "question": "Je dispose du temps nécessaire pour effectuer correctement mon travail"
+    },
+    {
+        "id": 14,
+        "question": "Je reçois des ordres contradictoires de la part d'autres personnes"
+    },
+    {
+        "id": 15,
+        "question": "Mon travail nécessite de longues périodes de concentration intense"
+    },
+    {
+        "id": 16,
+        "question": "Mes tâches sont souvent interrompues avant d'être achevées, nécessitant de les reprendre plus tard"
+    },
+    {
+        "id": 17,
+        "question": "Mon travail est \"très bousculé\""
+    },
+    {
+        "id": 18,
+        "question": "Attendre le travail de collègues ralentit souvent mon propre travail"
+    },
+    {
+        "id": 19,
+        "question": "Mon supérieur se sent concerné par le bien-être de ses subordonnés"
+    },
+    {
+        "id": 20,
+        "question": "Mon supérieur prête attention à ce que je dis"
+    },
+    {
+        "id": 21,
+        "question": "Mon supérieur m'aide à mener ma tâche à bien"
+    },
+    {
+        "id": 22,
+        "question": "Mon supérieur réussit facilement à faire collaborer ses subordonnés"
+    },
+    {
+        "id": 23,
+        "question": "Les collègues avec qui je travaillle sont des gens professionnellement compétents"
+    },
+    {
+        "id": 24,
+        "question": "Les collègues avec qui je travaille me manifestent de l'intérêt"
+    },
+    {
+        "id": 25,
+        "question": "Les collègues avec qui je travaille son amicaux"
+    },
+    {
+        "id": 26,
+        "question": "Les collègues avec qui je travaille m'aident à mener les tâches à bien"
+    },
+    {
+        "id": 27,
+        "question": "On me traite injustement dans mon travail"
+    },
+    {
+        "id": 28,
+        "question": "Ma sécurité d'emploi est menacée"
+    },
+    {
+        "id": 29,
+        "question": "Ma postion professionnelle actuelle correspond bien à ma formation"
+    },
+    {
+        "id": 30,
+        "question": "Vu tous mes efforts, je reçois le respect et l'estime que je mérite"
+    },
+    {
+        "id": 31,
+        "question": "Vu tous mes efforts, mes perspectives de promotion sont satisfaisantes"
+    },
+    {
+        "id": 32,
+        "question": "Vu tous mes efforts, mon salaire satisfaisant"
     }
 ]
