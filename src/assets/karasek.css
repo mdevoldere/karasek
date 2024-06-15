@@ -13,3 +13,27 @@ html {
 body {
     font-size: 1.6rem;
 }
+
+h1, h2 {
+    margin: 0;
+    padding: .3rem;
+}
+
+body > header, main {
+    width: 100rem;
+    margin: auto;
+    padding: .5rem;
+}
+
+body > header {
+    background-color: aquamarine;
+}
+
+.question {
+    border: 0;
+}
+
+.question label {
+    font-weight: bold;
+    font-size: 2rem;
+}
