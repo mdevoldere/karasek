@@ -25,7 +25,7 @@
                         <legend>Question {{ q.id }}</legend>
                         <label>{{ q.question }}.</label>
                         <div v-for="a,idx of answersLabels">
-                            <input type="radio" :name="q.id" v-model="q.score" :value="idx+1"> {{ a.label }}
+                            <input type="radio" :name="q.id" v-model="q.score" :value="idx+1"> {{ idx+1 }} {{ a.label }}
                         </div>
                     </fieldset>
                 </div>
