@@ -11,6 +11,7 @@ html {
 }
 
 body {
+    margin: 0;
     font-size: 1.6rem;
 }
 
@@ -20,13 +21,25 @@ h1, h2 {
 }
 
 body > header, main {
-    width: 100rem;
     margin: auto;
-    padding: .5rem;
 }
 
 body > header {
+    height: 18rem;
     background-color: aquamarine;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 96rem 1fr;
+    grid-template-rows: 80rem;
+    gap: 1rem;
+}
+
+.questionnaire {
+    background-color: #00FF0022;
+    overflow-y: scroll;
+    /*flex: 0 96rem;*/
 }
 
 .question {
@@ -37,4 +50,14 @@ body > header {
 .question label {
     font-weight: bold;
     font-size: 2.2rem;
+}
+
+.resultat {
+    background-color: #0000FF22;
+    /*flex: 1;*/
+}
+
+.resultat p {
+    margin: 0;
+    padding: 1rem;
 }

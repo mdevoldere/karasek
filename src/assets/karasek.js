@@ -6,10 +6,32 @@ class KarasekQuestion
     }
 }
 
-class KarasekCalc 
+class KarasekQuiz 
 {
     constructor(questions) {
         this.q = questions;
+        this.autonomie = 0;
+        this.utilisationCompetences = 0;
+        this.autonomieDecisionnelle = 0;
+        this.demandePsychologique = 0;
+        this.soutienSocial = 0;
+    }
+
+    calc() {
+        this.autonomie = this.getAutonomie();
+        this.utilisationCompetences = this.getUtilisationCompetences();
+        this.autonomieDecisionnelle = this.getAutonomieDecisionnelle();
+        this.demandePsychologique = this.getDemandePsychologique();
+        this.soutienSocial = this.getSoutienSocial();
+    }
+
+    formulaireComplet() {
+        for(let x of this.q) {
+            if(x.score < 1) {
+                return false;
+            }
+        }
+        return true;
     }
 
     getAutonomie() {
@@ -43,7 +65,6 @@ class KarasekCalc
     getDemandePsychologique() {
         // Demande psychologique = 
         // Q10 + Q11 + Q12+( 5-Q13) + Q14 + Q15 + Q16+ Q17 + Q18
-        
         let q10 = this.q[9].score;
         let q11 = this.q[10].score;
         let q12 = this.q[11].score;
@@ -54,7 +75,7 @@ class KarasekCalc
         let q17 = this.q[16].score;
         let q18 = this.q[17].score;
 
-        return (q10 + q11 + q12 + (5 - q13) + q14 + q15 + Q16 + q17 + q18);
+        return (q10 + q11 + q12 + (5 - q13) + q14 + q15 + q16 + q17 + q18);
     }
 
     getSoutienSocial() {
@@ -62,7 +83,7 @@ class KarasekCalc
         
         let q23 = this.q[22].score;
         let q24 = this.q[23].score;
-        let q25 = this.[q24].score;
+        let q25 = this.q[24].score;
         let q26 = this.q[25].score;
 
         return (q23 + q24 + q25 + q26);
@@ -71,4 +92,4 @@ class KarasekCalc
 
 }
 
-export { KarasekQuestion, KarasekCalc }
+export { KarasekQuestion, KarasekQuiz }

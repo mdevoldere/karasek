@@ -18,7 +18,7 @@
             Ce questionnaire est une évaluation collective du bien être au travail qui permet d’ évaluer globalement la santé mentale au sein d’une entreprise.</p>
     </header>
     <main id="app">
-        <section>
+        <section class="questionnaire">
             <h2>Questionnaire Karasek</h2>
                 <div v-for="q of questions">
                     <fieldset class="question">
@@ -29,8 +29,20 @@
                         </div>
                     </fieldset>
                 </div>
+                <div>
+                    <button @click="check">Valider mes réponses</button>
+                </div>
             </fieldset>
-
+        </section>
+        <section class="resultat" v-if="quiz != null">
+            <h2>Résultats</h2>
+            <article v-if="quiz.formulaireComplet()">
+                <p>Autonomie: {{ quiz.autonomie }}</p>
+                <p>Utilisation des compétences: {{ quiz.utilisationCompetences }}</p>
+                <p>Autonomie décisionnelle: {{ quiz.autonomieDecisionnelle }}</p>
+                <p>Demande psychologique: {{ quiz.demandePsychologique }}</p>
+                <p>Soutien social: {{ quiz.soutienSocial }}</p>
+            </article>
         </section>
     </main>
     <footer>

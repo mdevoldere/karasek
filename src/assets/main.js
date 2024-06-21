@@ -1,4 +1,4 @@
-import { KarasekQuestion } from "./karasek.js";
+import { KarasekQuestion, KarasekQuiz } from "./karasek.js";
 
 const karasekApp = {
     data() {
@@ -12,7 +12,8 @@ const karasekApp = {
             ],
             selectedService: '',
             questionsSrc: [],
-            questions: []
+            questions: [],
+            quiz: null
         }
     },
     async mounted() {
@@ -21,7 +22,8 @@ const karasekApp = {
         for(let q of this.questionsSrc) {
             this.questions.push(new KarasekQuestion(q));
         }
-        console.log(this.questionsSrc);
+        this.quiz = new KarasekQuiz(this.questions);
+        console.log(this.quiz);
     },
     computed: {
         hasSelectedService() {
@@ -30,7 +32,7 @@ const karasekApp = {
     },
     methods: {
         check() {
-            console.log(this.questions);
+            this.quiz.calc();
         },
         selectService(event) {
             //this.selectedService = event.target.
