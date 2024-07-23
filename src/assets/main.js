@@ -1,6 +1,7 @@
-import { KarasekQuestion, KarasekQuiz } from "./karasek.js";
+import { KarasekQuestion, KarasekQuiz, ComponentQuestion } from "./karasek.js";
 
 const karasekApp = {
+    components: { ComponentQuestion },
     data() {
         return {
             services: ['RF', 'OFP'],
@@ -11,19 +12,18 @@ const karasekApp = {
                 { score: 4, label: "Tout à fait d'accord"}
             ],
             selectedService: '',
-            questionsSrc: [],
             questions: [],
             quiz: null
         }
     },
     async mounted() {
         let r = await fetch('./assets/karasek.json');
-        this.questionsSrc = await r.json();
-        for(let q of this.questionsSrc) {
+        let questionsSrc = await r.json();
+        for(let q of questionsSrc) {
             this.questions.push(new KarasekQuestion(q));
         }
         this.quiz = new KarasekQuiz(this.questions);
-        console.log(this.quiz);
+        //console.log(this.quiz);
     },
     computed: {
         hasSelectedService() {

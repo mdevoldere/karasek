@@ -37,7 +37,7 @@
     },
     {
         "id": 10,
-        "question": "Mon travail me demande de travail très vite"
+        "question": "Mon travail me demande de travailler très vite"
     },
     {
         "id": 11,
@@ -97,7 +97,7 @@
     },
     {
         "id": 25,
-        "question": "Les collègues avec qui je travaille son amicaux"
+        "question": "Les collègues avec qui je travaille sont amicaux"
     },
     {
         "id": 26,
@@ -125,6 +125,6 @@
     },
     {
         "id": 32,
-        "question": "Vu tous mes efforts, mon salaire satisfaisant"
+        "question": "Vu tous mes efforts, mon salaire est satisfaisant"
     }
 ]

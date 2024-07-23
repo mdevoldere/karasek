@@ -1,5 +1,6 @@
 :root {
-
+    --bg: #FFFFFF;
+    --txt: darkblue;
 }
 
 * {
@@ -25,8 +26,9 @@ body > header, main {
 }
 
 body > header {
+    padding: 1rem;
     height: 18rem;
-    background-color: aquamarine;
+    background-color: #DDDDDD;
 }
 
 main {

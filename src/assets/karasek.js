@@ -1,4 +1,4 @@
-class KarasekQuestion
+export class KarasekQuestion
 {
     constructor(question) {
         Object.assign(this, question);
@@ -6,7 +6,7 @@ class KarasekQuestion
     }
 }
 
-class KarasekQuiz 
+export class KarasekQuiz 
 {
     constructor(questions) {
         this.q = questions;
@@ -26,12 +26,7 @@ class KarasekQuiz
     }
 
     formulaireComplet() {
-        for(let x of this.q) {
-            if(x.score < 1) {
-                return false;
-            }
-        }
-        return true;
+        return this.q.every(x => x.score > 0);
     }
 
     getAutonomie() {
@@ -92,4 +87,32 @@ class KarasekQuiz
 
 }
 
-export { KarasekQuestion, KarasekQuiz }
+export const ComponentQuestion = {
+    props: {
+        quiz: Array
+    },
+    data() {
+        return {
+            question: null,
+            answers: [
+                { score: 1, label: "Pas du tout d'accord"},
+                { score: 2, label: "Pas d'accord"},
+                { score: 3, label: "D'accord"},
+                { score: 4, label: "Tout à fait d'accord"}
+            ]
+        }
+    },
+    methods: {
+        validate() {
+
+        }
+    },
+    template: `<fieldset class="question" v-if="question !== null">
+        <legend>Question {{ question.id }}</legend>
+        <label>{{ question.question }}.</label>
+        <div v-for="a,idx of answers">
+            <input type="radio" :name="question.id" v-model="question.score" :value="idx+1"> {{ idx+1 }} {{ a.label }}
+        </div>
+    </fieldset>
+    <button @click="validate">Valider</button>`
+}
