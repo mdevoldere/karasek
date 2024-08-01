@@ -59,3 +59,8 @@ nommée « stress positif ».
 psychologique et d’une faible latitude décisionnelle
 - Selon Karasek il est à supposer que cette situation de travail peut conduire à l’ennui et l’atrophie des compétences accompagné par des conséquences négatives sur la 
 santé. 
+
+
+---
+
+[evaluer-scientifiquement-les-risques-psychosociaux](https://www.apex-isast.fr/les-risques-psychosociaux/evaluer-scientifiquement-les-risques-psychosociaux/)
