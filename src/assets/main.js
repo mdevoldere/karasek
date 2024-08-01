@@ -5,15 +5,10 @@ const karasekApp = {
     data() {
         return {
             services: ['RF', 'OFP'],
-            answersLabels: [
-                { score: 1, label: "Pas du tout d'accord"},
-                { score: 2, label: "Pas d'accord"},
-                { score: 3, label: "D'accord"},
-                { score: 4, label: "Tout à fait d'accord"}
-            ],
             selectedService: '',
             questions: [],
-            quiz: null
+            quiz: null,
+            ready: false
         }
     },
     async mounted() {
@@ -31,8 +26,8 @@ const karasekApp = {
         }
     },
     methods: {
-        check() {
-            this.quiz.calc();
+        startQuiz() {
+            this.ready = true;
         },
         selectService(event) {
             //this.selectedService = event.target.

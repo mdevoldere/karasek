@@ -13,30 +13,62 @@
         <h1>LES FACTEURS PSYCHOSOCIAUX AU TRAVAIL</h1>
         <h2>Évaluation par le questionnaire de Karasek</h2>
         <p>
-            Les facteurs psychosociaux au travail sont des facteurs de risque reconnus pour la santé. 
-            Le questionnaire de Karasek est un outil d’évaluation des facteurs psychosociaux au travail. 
-            Ce questionnaire est une évaluation collective du bien être au travail qui permet d’ évaluer globalement la santé mentale au sein d’une entreprise.
+            Les facteurs psychosociaux au travail sont des facteurs de risque reconnus pour la santé.<br> 
+            La compréhension des phénomènes de souffrance au travail ne dépend pas uniquement d’éléments visibles, mais aussi d’éléments non directement observables liés au vécu de l’activité, car le travail n’est pas la simple exécution d’une tâche prescrite.<br>
+            Le questionnaire de Karasek est un outil d’évaluation collective du bien être au travail qui permet d’ évaluer globalement la santé mentale au sein d’une entreprise.
         </p>
     </header>
     <main id="app">
-        <section class="questionnaire">
-            <h2>Questionnaire Karasek</h2>
-                <div v-for="q of questions">
-                    <component-question :question="q"></component-question>
+        <section class="questionnaire" v-if="quiz != null && !quiz.formulaireComplet()">
+            <div v-if="!ready">
+                <h2>Questionnaire de Karasek (32 questions)</h2>
+                <button class="btn large" @click="startQuiz">Démarrer</button>
+                <hr>
+                <div class="home-img">
+                    <img src="./assets/rps.png" alt="RPS">
+                    <img src="./assets/karasek-diagramme.png" alt="Karasek Diagramme">
                 </div>
-                <div>
-                    <button @click="check">Valider mes réponses</button>
-                </div>
-            </fieldset>
+            </div>
+            <div v-else>
+                <h2>Questionnaire de Karasek</h2>
+                <component-question :quiz="quiz"></component-question>
+            </div>
         </section>
-        <section class="resultat" v-if="quiz != null">
-            <h2>Résultats</h2>
+        <section class="resultat" v-if="quiz != null && quiz.formulaireComplet()">
             <article v-if="quiz.formulaireComplet()">
-                <p>Autonomie: {{ quiz.autonomie }}</p>
-                <p>Utilisation des compétences: {{ quiz.utilisationCompetences }}</p>
-                <p>Autonomie décisionnelle: {{ quiz.autonomieDecisionnelle }}</p>
-                <p>Demande psychologique: {{ quiz.demandePsychologique }}</p>
-                <p>Soutien social: {{ quiz.soutienSocial }}</p>
+                <h2>Résultats</h2>
+                <fieldset class="question">
+                    <legend>Autonomie: {{ quiz.autonomie }}</legend>
+                    <p>C'est la possibilité d'organiser son travail soi même.</p>
+                    <p>Un salarié dont le score d'autonomie est <strong>inférieur à 24</strong> dispose d'une faible autonomie dans son travail.</p>
+                </fieldset>
+                <fieldset class="question">
+                    <legend>Utilisation des compétences: {{ quiz.utilisationCompetences }}</legend>
+                    <p>C'est la possibilité d’utiliser ses propres compétences et d’en développer de nouvelles.</p>
+                    <p>Un salarié dont le score d'utilisation des compétences est <strong>inférieur à 46</strong> voit ses compétences sous-exploitées dans l'activité qu'il exerce.</p>
+                </fieldset>
+                <fieldset class="question">
+                    <legend>Latitude décisionnelle: {{ quiz.autonomieDecisionnelle }}</legend>
+                    <p>C'est la possibilité de choisir sa façon de travailler, de participer aux décisions qui s’y rattachent.</p>
+                    <p>Un salarié dont le score de latitude est <strong>inférieur ou égal à 70</strong> dispose d'une faible latitude décisionnelle</p>
+                </fieldset>
+                <fieldset class="question">
+                    <legend>Demande psychologique: {{ quiz.demandePsychologique }}</legend>
+                    <p>C’est la charge psychologique associée à l’exécution des tâches, à la quantité et à la complexité des tâches, aux tâches imprévues, aux contraintes de temps, aux interruptions et aux demandes contradictoires.</p>
+                    <p>Un salarié dont le score de demande psychologique est <strong>supérieur ou égal à 21</strong> subit une forte demande psychologique</p>
+                </fieldset>
+                <fieldset class="question">
+                    <legend>Soutien social: {{ quiz.soutienSocial }}</legend>
+                    <p>C’est l’aide et la reconnaissance des collègues et de la hiérarchie.</p>
+                    <p>Un salarié dont le score de soutien social est <strong>inférieur à 24</strong> bénéficie d'un faible soutien social.</p>
+                </fieldset>              
+                <fieldset class="question">
+                    <legend>Reconnaissance: {{ quiz.reconnaissance }}</legend>
+                    <p>C'est la reconnaissance du travail effectué de la part de la hiérarchie et des collègues.</p>
+                    <p>Le score est calculé sur <strong>24</strong>. Plus le salarié approche ce score, plus il bénéficie d'une reconnaissance de son travail.</p>
+                </fieldset>
+                <hr>
+                <a class="btn full" href="./index.html">Retour</a>
             </article>
         </section>
     </main>

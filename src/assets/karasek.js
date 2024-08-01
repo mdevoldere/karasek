@@ -2,7 +2,15 @@ export class KarasekQuestion
 {
     constructor(question) {
         Object.assign(this, question);
-        this.score = 0;
+        this._score = 0;
+    }
+
+    get score() {
+        return this._score;
+    }
+
+    set score(value) {
+        this._score = parseInt(value);
     }
 }
 
@@ -23,10 +31,16 @@ export class KarasekQuiz
         this.autonomieDecisionnelle = this.getAutonomieDecisionnelle();
         this.demandePsychologique = this.getDemandePsychologique();
         this.soutienSocial = this.getSoutienSocial();
+        this.reconnaissance = this.getReconnaissance();
     }
 
     formulaireComplet() {
-        return this.q.every(x => x.score > 0);
+        if(this.q.every(x => x.score > 0)) {
+            console.log(this.q)
+            this.calc();
+            return true;
+        }
+        return false;
     }
 
     getAutonomie() {
@@ -84,16 +98,28 @@ export class KarasekQuiz
         return (q23 + q24 + q25 + q26);
     }
 
+    getReconnaissance() {
+        // Reconnaissance = (5-Q27) + (5-Q28) + Q29 + Q30 + Q31 + Q32
+        let q27 = this.q[26].score;
+        let q28 = this.q[27].score;
+        let q29 = this.q[28].score;
+        let q30 = this.q[29].score;
+        let q31 = this.q[30].score;
+        let q32 = this.q[31].score;
+
+        return ((5 - q27) + (5 - q28) + q29 + q30 + q31 + q32);
+    }
+
 
 }
 
 export const ComponentQuestion = {
     props: {
-        quiz: Array
+        quiz: KarasekQuiz
     },
     data() {
         return {
-            question: null,
+            position: 0,
             answers: [
                 { score: 1, label: "Pas du tout d'accord"},
                 { score: 2, label: "Pas d'accord"},
@@ -102,17 +128,26 @@ export const ComponentQuestion = {
             ]
         }
     },
+    mounted() {
+        
+    },
+    computed: {
+        question() {
+            return this.quiz.q[this.position] ?? null;
+        }
+    },
     methods: {
-        validate() {
-
+        validate(e) {
+            this.question.score = e.target.dataset.value;
+            if(this.position < this.quiz.q.length-1)
+                this.position++;
         }
     },
     template: `<fieldset class="question" v-if="question !== null">
-        <legend>Question {{ question.id }}</legend>
+        <legend>Question {{ question.id }}/{{ quiz.q.length }}</legend>
         <label>{{ question.question }}.</label>
-        <div v-for="a,idx of answers">
-            <input type="radio" :name="question.id" v-model="question.score" :value="idx+1"> {{ idx+1 }} {{ a.label }}
+        <div class="answers">
+            <button @click="validate" v-for="a,idx of answers" :name="question.id" :data-value="idx+1">{{ a.label }}</button>
         </div>
-    </fieldset>
-    <button @click="validate">Valider</button>`
+    </fieldset>`
 }

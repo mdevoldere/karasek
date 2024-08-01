@@ -29,3 +29,33 @@ Il est calculé de la façon suivante :
 - Demande psychologique = Q10 + Q11 + Q12+( 5-Q13) + Q14 + Q15 + Q16+ Q17 + Q18
 - Soutien social = Q23 + Q24 + Q25+ Q26
 
+
+## Interprétation des scores 
+
+**Demande psychologique inférieure à 21 / latitude décisionnelle supérieure à 70 :**
+- Le sujet est « détendu », s’il bénéficie d’une faible demande psychologique et d’une grande autonomie pour réaliser son travail.
+
+--- 
+
+**Demande psychologique supérieure à 21 / latitude décisionnelle inférieure à 70 :** 
+- L’individu se trouve dans le cadran « tendu » et donc considéré en situation de 
+« Jobstrain »
+- Le « Jobstrain », qui veut dire « tension au travail », est la combinaison d’une faible 
+latitude décisionnelle et d’une forte demande psychologique, ce qui provoquerait un 
+stress élevé avec des risques de tension psychologique et de maladie 
+
+--- 
+
+**Demande psychologique supérieure à 21 / latitude décisionnelle supérieure à 70 :** 
+- L’individu se trouve dans le cadran « actif », combinaison d'une pression élevée et 
+d’une grande liberté́d'action, ce qui rendra le travailleur dynamique et motivé
+- La pression induite par les exigences élevées dans cette situation est parfois 
+nommée « stress positif ». 
+
+--- 
+
+**Demande psychologique inférieure à 21 / latitude décisionnelle inférieure à 70 :** 
+- L’inidvidu se trouve dans le cadran « passif », combinaison d’une faible demande 
+psychologique et d’une faible latitude décisionnelle
+- Selon Karasek il est à supposer que cette situation de travail peut conduire à l’ennui et l’atrophie des compétences accompagné par des conséquences négatives sur la 
+santé. 
